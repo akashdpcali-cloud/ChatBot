@@ -9,14 +9,14 @@
 
 .user {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-end;
   gap: 10px;
 }
 
 .bot {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 10px;
 }
@@ -25,7 +25,7 @@
   background: #fff ;
   color: #111;
   padding: 10px 16px;
-  border-radius: 18px 18px 4px 18px;
+  border-radius: 18px 1px 18px 18px;
   font-size: 18px;
   max-width: 65%;
   line-height: 1.5;
@@ -35,7 +35,7 @@
   background: #fff;
   color: #111;
   padding: 10px 16px;
-  border-radius: 18px 18px 18px 4px;
+  border-radius: 1px 18px 18px 18px;
   font-size: 18px;
   max-width: 65%;
   line-height: 1.5;
@@ -54,4 +54,94 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px !important;
+}
+
+.typing span {
+  width: 7px;
+  height: 7px;
+  background: #888;
+  border-radius: 50%;
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
+}
+
+.formatted h1 { font-size: 18px; font-weight: 600; margin: 8px 0 4px; }
+.formatted h2 { font-size: 16px; font-weight: 600; margin: 8px 0 4px; }
+.formatted h3 { font-size: 15px; font-weight: 600; margin: 6px 0 4px; }
+.formatted p  { margin: 4px 0; line-height: 1.6; }
+.formatted li { margin-left: 18px; line-height: 1.6; list-style: disc; }
+.formatted strong { font-weight: 600; }
+.formatted br { display: block; margin: 2px 0; }
+
+.welcome-message {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 500;
+  color: #888;
+}
+
+.code-canvas {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+  background: #f9f9f9;
+}
+
+.code-canvas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background: #f0f0f0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.code-language {
+  font-size: 12px;
+  font-weight: 500;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.copy-button {
+  font-size: 12px;
+  padding: 4px 10px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: auto;
+}
+
+.copy-button:hover {
+  background: #333;
+}
+
+.inline-code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: monospace;
+  color: #d63031;
 }
