@@ -1,0 +1,80 @@
+### Register User
+
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "akash",
+    "email": "akash@example.com",
+    "password": "password123"
+}
+
+
+### Duplicate User
+
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "akash",
+    "email": "akash@example.com",
+    "password": "password123"
+}
+
+
+### Missing Fields
+
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "akash"
+}
+
+
+### Invalid Email
+
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "akash",
+  "email": "not-an-email",
+  "password": "password123"
+}
+
+
+
+### Missing Username
+
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "test@gmail.com",
+  "password": "password123"
+}
+
+
+### Short Username
+
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "ab",
+  "email": "test@gmail.com",
+  "password": "password123"
+}
+
+
+### Short Password
+
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "akash",
+  "email": "test@gmail.com",
+  "password": "123"
+}
