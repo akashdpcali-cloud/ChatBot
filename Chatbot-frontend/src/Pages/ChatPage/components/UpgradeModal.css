@@ -1,0 +1,134 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  width: 620px;
+  max-width: 95vw;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+}
+
+.modal-close {
+  font-size: 18px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #111;
+}
+
+.plans {
+  display: flex;
+  gap: 20px;
+}
+
+.plan {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.plan.pro {
+  border-color: #111;
+  background: #fafafa;
+}
+
+.plan-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.plan-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+}
+
+.plan-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+}
+
+.plan-price span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
+}
+
+.plan-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.plan-features li {
+  font-size: 14px;
+  color: #444;
+}
+
+.plan-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+.free-btn {
+  background: #f0f0f0;
+  color: #888;
+  cursor: default;
+}
+
+.pro-btn {
+  background: #111;
+  color: #fff;
+}
+
+.pro-btn:hover {
+  background: #333;
+}

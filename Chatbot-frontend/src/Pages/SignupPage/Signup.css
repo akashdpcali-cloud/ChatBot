@@ -1,3 +1,13 @@
+.signup-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0; 
+  font-family: 'Roboto', sans-serif;
+}
+
 .main-div {
   background: #ffffff;
   padding: 40px 36px;
@@ -9,7 +19,7 @@
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   justify-self: center;
   align-self: center;
-}
+} 
 
 .title {
   font-size: 26px;
@@ -98,4 +108,10 @@ button:hover {
 .link:hover {
   color: #111;
   text-decoration: underline;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 13px;
+  text-align: center;
 }

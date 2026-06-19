@@ -10,8 +10,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f0f0f0;
-  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f0f0; 
+  font-family: 'Roboto', sans-serif;
 }
 
 .main-div {
@@ -108,4 +108,10 @@ button:hover {
   cursor: pointer;
   font-size: 16px;
   user-select: none;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 13px;
+  text-align: center;
 }
