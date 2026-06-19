@@ -1,0 +1,27 @@
+### Create Chat
+
+POST http://localhost:5000/api/chats
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MGQwZjVkYy0wZWZkLTQwN2MtYWVlOS04NTBkM2NlYmI5MTgiLCJpYXQiOjE3ODE4NjI5NTMsImV4cCI6MTc4MjQ2Nzc1M30.V6DRSFZzXGZBUaywAevMfkLQo4NsWYpGgERfsmPuplY
+
+
+### Get Chats
+
+GET http://localhost:5000/api/chats
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MGQwZjVkYy0wZWZkLTQwN2MtYWVlOS04NTBkM2NlYmI5MTgiLCJpYXQiOjE3ODE4NjI5NTMsImV4cCI6MTc4MjQ2Nzc1M30.V6DRSFZzXGZBUaywAevMfkLQo4NsWYpGgERfsmPuplY
+
+
+### Delete Chat
+
+DELETE http://localhost:5000/api/chats/df89336f-a6fc-4cfe-9a39-658e5de36266
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MGQwZjVkYy0wZWZkLTQwN2MtYWVlOS04NTBkM2NlYmI5MTgiLCJpYXQiOjE3ODE4NjI5NTMsImV4cCI6MTc4MjQ2Nzc1M30.V6DRSFZzXGZBUaywAevMfkLQo4NsWYpGgERfsmPuplY
+
+
+### Rename Chat
+
+PUT http://localhost:5000/api/chats/329ae82c-3193-4ffc-be0a-b7a9fdea490a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MGQwZjVkYy0wZWZkLTQwN2MtYWVlOS04NTBkM2NlYmI5MTgiLCJpYXQiOjE3ODE4NjI5NTMsImV4cCI6MTc4MjQ2Nzc1M30.V6DRSFZzXGZBUaywAevMfkLQo4NsWYpGgERfsmPuplY
+Content-Type: application/json
+
+{
+  "title": "Python code"
+}

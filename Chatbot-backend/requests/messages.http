@@ -1,0 +1,15 @@
+### Send Message
+
+POST http://localhost:5000/api/chats/329ae82c-3193-4ffc-be0a-b7a9fdea490a/messages
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MGQwZjVkYy0wZWZkLTQwN2MtYWVlOS04NTBkM2NlYmI5MTgiLCJpYXQiOjE3ODE4NjI5NTMsImV4cCI6MTc4MjQ2Nzc1M30.V6DRSFZzXGZBUaywAevMfkLQo4NsWYpGgERfsmPuplY
+Content-Type: application/json
+
+{
+  "content": "give me a python code to calculate the sum of n natural numbers"
+}
+
+
+### Get Messages
+
+GET http://localhost:5000/api/chats/329ae82c-3193-4ffc-be0a-b7a9fdea490a/messages
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MGQwZjVkYy0wZWZkLTQwN2MtYWVlOS04NTBkM2NlYmI5MTgiLCJpYXQiOjE3ODE4NjI5NTMsImV4cCI6MTc4MjQ2Nzc1M30.V6DRSFZzXGZBUaywAevMfkLQo4NsWYpGgERfsmPuplY
