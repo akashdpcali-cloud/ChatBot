@@ -78,3 +78,83 @@ Content-Type: application/json
   "email": "test@gmail.com",
   "password": "123"
 }
+
+
+
+//------------------------------LOGIN TEST---------------------------------
+
+
+
+
+### Login Success
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "akash@example.com",
+  "password": "password123"
+}
+
+
+### Wrong Password
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "akash@example.com",
+  "password": "wrongpassword"
+}
+
+
+### Unknown Email
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "nobody@gmail.com",
+  "password": "password123"
+}
+
+
+### Missing Email
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "password": "password123"
+}
+
+
+### Login
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "akash@example.com",
+  "password": "password123"
+}
+
+
+### Current User
+
+GET http://localhost:5000/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MGQwZjVkYy0wZWZkLTQwN2MtYWVlOS04NTBkM2NlYmI5MTgiLCJpYXQiOjE3ODE4NjA4OTQsImV4cCI6MTc4MjQ2NTY5NH0.DlQvqglIfoMO-BLJD1VDtSj4hQpnApO_1XlKpM-zST8
+
+
+### No Token
+
+GET http://localhost:5000/api/auth/me
+
+
+//---------------LOGOUT--------------------------------------------------
+
+
+### Logout
+
+POST http://localhost:5000/api/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MGQwZjVkYy0wZWZkLTQwN2MtYWVlOS04NTBkM2NlYmI5MTgiLCJpYXQiOjE3ODE4NjA4OTQsImV4cCI6MTc4MjQ2NTY5NH0.DlQvqglIfoMO-BLJD1VDtSj4hQpnApO_1XlKpM-zST8
