@@ -38,6 +38,9 @@ model Message {
   conversationId String
 
   role           String
+
+  type           String       @default("text")
+
   content        String
 
   createdAt      DateTime     @default(now())
