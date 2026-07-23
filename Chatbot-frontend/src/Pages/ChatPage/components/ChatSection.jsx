@@ -43,9 +43,7 @@ function ChatSection({ messages, setMessages, activeChatId, setActiveChatId, onN
     setLoading(true)
 
     try {
-      const { data } = await api.post(`/chats/${chatId}/messages`, {
-        content: input
-      })
+      const { data } = await api.post(`/chats/${chatId}/messages`, { content: input })
       setMessages((prev) => [...prev, data.message])
 
       if (isFirstMessage.current) {
@@ -55,17 +53,47 @@ function ChatSection({ messages, setMessages, activeChatId, setActiveChatId, onN
     } catch (err) {
       setMessages((prev) => [
         ...prev,
-        { role: 'assistant', content: `${err}` }
+        { role: 'assistant', content: err }
       ])
     } finally {
       setLoading(false)
     }
   }
 
+  async function handleImageGenerated(prompt) {
+    let chatId = activeChatId
+
+    if (!chatId) {
+      try {
+        const { data: newChat } = await api.post('/chats')
+        chatId = newChat.id
+        setActiveChatId(newChat.id)
+        isFirstMessage.current = true
+        if (onNewChat?.current) onNewChat.current()
+      } catch (err) {
+        console.error('Failed to create chat:', err)
+        return
+      }
+    }
+
+    try {
+      await api.post(`/chats/${chatId}/images`, { prompt })
+      const { data: messages } = await api.get(`/chats/${chatId}/messages`)
+      setMessages(messages)
+
+      if (isFirstMessage.current) {
+        isFirstMessage.current = false
+        if (onTitleUpdate?.current) onTitleUpdate.current(chatId)
+      }
+    } catch (err) {
+      console.error('Failed to generate image:', err)
+    }
+  }
+
   return (
     <div className="chat-section">
       <Conversation messages={messages} loading={loading} bottomRef={bottomRef} latestBotRef={latestBotRef} />
-      <ChatInput onSend={handleSend} loading={loading} />
+      <ChatInput onSend={handleSend} loading={loading} onImageGenerated={handleImageGenerated} />
     </div>
   )
 }

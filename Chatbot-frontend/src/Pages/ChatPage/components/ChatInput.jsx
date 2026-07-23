@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
 import './ChatInput.css'
 
-function ChatInput({ onSend, loading }) {
+function ChatInput({ onSend, loading, onImageGenerated }) {
   const [input, setInput] = useState('')
+  const [imgLoading, setImgLoading] = useState(false)
   const inputRef = useRef(null)
 
   useEffect(() => {
@@ -22,6 +23,23 @@ function ChatInput({ onSend, loading }) {
     if (e.key === 'Enter') handleSend()
   }
 
+  async function handleImageGenerate() {
+  if (!input.trim() || imgLoading) return
+
+  const prompt = input
+  setImgLoading(true)
+
+  try {
+    setInput('')
+    await onImageGenerated(prompt)
+  } catch (err) {
+    console.error('Image generation failed:', err)
+  } finally {
+    setImgLoading(false)
+    inputRef.current?.focus()
+  }
+}
+
   return (
     <div className="chat-input">
       <input
@@ -31,9 +49,16 @@ function ChatInput({ onSend, loading }) {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
-        disabled={loading}
+        disabled={loading || imgLoading}
       />
-      <button className="ask-button" onClick={handleSend} disabled={loading}>
+      <button
+        className="gen-button"
+        onClick={handleImageGenerate}
+        disabled={imgLoading || loading}
+      >
+        {imgLoading ? '...' : 'Img'}
+      </button>
+      <button className="ask-button" onClick={handleSend} disabled={loading || imgLoading}>
         {loading ? '...' : 'Ask'}
       </button>
     </div>

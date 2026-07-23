@@ -38,3 +38,8 @@
 .ask-button:hover {
   background: #333;
 }
+
+.gen-button{
+  width: 100px;
+  height: 48px;
+}
