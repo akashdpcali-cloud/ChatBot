@@ -10,4 +10,4 @@ router.get("/", authenticate, getChats);
 router.delete("/:chatId", authenticate, deleteChat);
 router.put("/:chatId", authenticate, updateChat);
 
-export default router;
+export default router;  
