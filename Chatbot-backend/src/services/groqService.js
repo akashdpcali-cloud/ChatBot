@@ -1,7 +1,7 @@
 import Groq from "groq-sdk";
 
 const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY
+  apiKey: process.env.GROQ_API_KEY,
 });
 
 const systemPrompt = {
@@ -16,16 +16,13 @@ Always format responses using:
 - Code blocks for code
 
 Keep responses clean and concise.
-`
+`,
 };
 
 export const generateResponse = async (messages) => {
   const response = await groq.chat.completions.create({
-    model: "llama-3.3-70b-versatile",
-    messages: [
-      systemPrompt,
-      ...messages
-    ]
+    model: "openai/gpt-oss-120b",
+    messages: [systemPrompt, ...messages],
   });
 
   return response.choices[0].message.content;
