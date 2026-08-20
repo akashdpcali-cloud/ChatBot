@@ -21,7 +21,7 @@ Keep responses clean and concise.
 
 export const generateResponse = async (messages) => {
   const response = await groq.chat.completions.create({
-    model: "llama-3.1-8b-instant",
+    model: "openai/gpt-oss-120b",
     messages: [systemPrompt, ...messages],
   });
 
